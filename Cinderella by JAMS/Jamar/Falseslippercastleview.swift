@@ -38,10 +38,17 @@ struct Falseslippercastle: View {
                     NavigationLink {
                         MainView()
                     } label: { 
-                        Text("Unlock Chapter 5")
+                        Text("Unlock Chapter 5") 
+                            .padding()
+                            .foregroundColor(.black)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color.blue, lineWidth: 2)
+                            )
                             
                                  
                     }
+                    
                
                 }
                 .padding()

@@ -42,15 +42,11 @@ struct JoeChapterTextingView: View {
                                         .stroke(Color.blue, lineWidth: 2)
                                 )
                         }
-                       
-                        
-
                     }
-                    
-                    
                 }
             }
-        } 
+        }
+        .navigationBarBackButtonHidden(true)
         .onAppear {
             chapterUnlocker.isChapter4Disabled = false
         }

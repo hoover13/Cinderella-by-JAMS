@@ -22,7 +22,7 @@ struct SplashScreenView: View {
                     .resizable()
                     .ignoresSafeArea()
                 
-                VStack {
+                VStack { 
                     Image("shoe")
                         .resizable()
                         .clipShape(Circle())

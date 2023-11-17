@@ -25,32 +25,32 @@ struct RoyalBallView: View {
     //    @Binding var navigateToNextChapter: Bool
     @EnvironmentObject var chapterUnlocker: ChapterUnlocker
     var body: some View {
-        ZStack{
-            LinearGradient(colors: [.gray, .white], startPoint: .topLeading, endPoint: .bottomTrailing)
-                .ignoresSafeArea()
-            
-            VStack {
-                Text("Chapter 4")
-                    .bold()
-                Spacer()
-                Image("theball")
-                    .resizable()
-                    .scaledToFit()
-                ScrollView {
-                    Text("""
-        The ball had tons of royals and nobles in attendance ready to party and turn up.
-        Cinderella dedcides to go look for some drinks so she can loosen up a bit, unaware that Anastasia and Drizella was watching her.
-        Cinderella has a great night, I lost count after watching her take so many shots. She's definitely going to need a stanback in the morning.
-        """)
-                    
-                    
-                    
-                    
+            ZStack{
+                LinearGradient(colors: [.gray, .white], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .ignoresSafeArea()
+                
+                VStack {
+                    Text("Chapter 4")
+                        .bold()
+                    Spacer()
+                    Image("theball")
+                        .resizable()
+                        .scaledToFit()
+                    ScrollView {
+                        Text("""
+            The ball had tons of royals and nobles in attendance ready to party and turn up.
+            Cinderella dedcides to go look for some drinks so she can loosen up a bit, unaware that Anastasia and Drizella was watching her.
+            Cinderella has a great night, I lost count after watching her take so many shots. She's definitely going to need a stanback in the morning.
+            """)
+                        
+                        
+                        
+                        
+                    }
+                    .padding()
                 }
-                .padding()
             }
-        }
-        
+            
     }
 }
 
@@ -61,31 +61,36 @@ struct RoyalBallView: View {
 
 struct Chapter4View: View{
     var body: some View{
-        TabView{
-            RoyalBallView()
-                .tabItem{
-                    Label("Royal Ball", systemImage: "balloon")
-                }
-            LostSlipperView()
-                .tabItem{
-                    Label("Lost Slipper", systemImage: "shoe")
-                }
-            Shoeswapview()
-                .tabItem {
-                    Label("Shoe Swap", systemImage: "person.fill.and.arrow.left.and.arrow.right")}
-            Falseslippercastle()
-                        .tabItem {
-                            Label("Slipper Castle", systemImage: "house.fill")
-                                
-                                
-                        }
-                    
-                    
-                    
-                    
-                    
-                    
-                }
+        
+        NavigationView {
+            TabView{
+                RoyalBallView()
+                    .tabItem{
+                        Label("Royal Ball", systemImage: "balloon")
+                    }
+                LostSlipperView()
+                    .tabItem{
+                        Label("Lost Slipper", systemImage: "shoe")
+                    }
+                Shoeswapview()
+                    .tabItem {
+                        Label("Shoe Swap", systemImage: "person.fill.and.arrow.left.and.arrow.right")}
+                Falseslippercastle()
+                            .tabItem {
+                                Label("Slipper Castle", systemImage: "house.fill")
+                                    
+                                    
+                            }
+                        
+                        
+                        
+                        
+                        
+                        
+                    }
+        }
+        .navigationBarBackButtonHidden(true)
+      
         
         
         }

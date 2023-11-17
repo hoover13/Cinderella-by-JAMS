@@ -12,7 +12,7 @@ struct Cinderella_by_JAMSApp: App {
     var body: some Scene {
         WindowGroup {
             SplashScreenView()
-//                .environmentObject(ChapterUnlocker())
+                .environmentObject(ChapterUnlocker())
         }
     }
 }

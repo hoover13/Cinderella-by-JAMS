@@ -42,17 +42,13 @@ struct Falseslippercastle: View {
                             
                                  
                     }
-                    .onTapGesture {
-                        print("Unlocked")
-                        chapterUnlocker.isChapter5Disabled = false
-                    }
-
-
-                     
-                     
+               
                 }
                 .padding()
             }
+        }
+        .onAppear {  
+            chapterUnlocker.isChapter5Disabled = false
         }
     }
     

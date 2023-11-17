@@ -8,41 +8,56 @@
 import SwiftUI
 
 struct JoeChapterTextingView: View {
+    @EnvironmentObject var chapterUnlocker: ChapterUnlocker
     var body: some View {
         
-        ZStack {
-            Color.cyan
-                .ignoresSafeArea()
-            
-            VStack {
+        NavigationView {
+            ZStack {
+                Color.cyan
+                    .ignoresSafeArea()
                 
-                Text("Chapter 3")
-                    .font(.largeTitle)
-                    .bold()
-                ScrollView {
+                VStack {
                     
-                    Text("""
-        Although the story's title and main character's name change in different languages, in English-language folklore Cinderella is an archetypal name. The word Cinderella has, by analogy, come to mean someone whose attributes are unrecognized, or someone unexpectedly achieves recognition or success after a period of obscurity and neglect. In the world of sports, "a Cinderella" is used for an underrated team or club winning over stronger and more favored competitors. The still-popular story of Cinderella continues to influence popular culture internationally, lending plot elements, allusions, and tropes to a wide variety of media.
-        Although the story's title and main character's name change in different languages, in English-language folklore Cinderella is an archetypal name. The word Cinderella has, by analogy, come to mean someone whose attributes are unrecognized, or end.
+                    Text("Chapter 3")
+                        .font(.largeTitle)
+                        .bold()
+                    ScrollView {
+                        
+                        Text("""
+            Although the story's title and main character's name change in different languages, in English-language folklore Cinderella is an archetypal name. The word Cinderella has, by analogy, come to mean someone whose attributes are unrecognized, or someone unexpectedly achieves recognition or success after a period of obscurity and neglect. In the world of sports, "a Cinderella" is used for an underrated team or club winning over stronger and more favored competitors. The still-popular story of Cinderella continues to influence popular culture internationally, lending plot elements, allusions, and tropes to a wide variety of media.
+            Although the story's title and main character's name change in different languages, in English-language folklore Cinderella is an archetypal name. The word Cinderella has, by analogy, come to mean someone whose attributes are unrecognized, or end.
 
-        """)
-                    .font(.system(size: 32))
-                    .padding()
-                    
-                    
-                    NavigationLink {
-                        MainView()
-                    } label: {
-                        Text("Finish")
+            """)
+                        .font(.system(size: 32))
+                        .padding()
+                        
+                        NavigationLink {
+                            MainView()
+                        } label: {
+                            Text("Finish")
+                                .padding()
+                                .foregroundColor(.black)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.blue, lineWidth: 2)
+                                )
+                        }
+                       
+                        
+
                     }
                     
-
+                    
                 }
             }
+        } 
+        .onAppear {
+            chapterUnlocker.isChapter4Disabled = false
         }
     }
 }
 
 #Preview {
     JoeChapterTextingView()
+        .environmentObject(ChapterUnlocker())
 }

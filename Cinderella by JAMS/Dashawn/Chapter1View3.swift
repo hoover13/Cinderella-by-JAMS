@@ -32,9 +32,6 @@ struct Chapter1View3: View {
         case .no: Chapter1AltView()
         }
     }
-   
-    
-    
     
     
     var body: some View {

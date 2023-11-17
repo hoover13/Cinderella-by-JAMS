@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-
+ 
 struct Chapter1View10: View {
     @EnvironmentObject var chapterUnlocker: ChapterUnlocker
     var body: some View {
-        
+         
         NavigationStack {
             ZStack {
                 Color(.C_1_P_10)
@@ -64,13 +64,10 @@ struct Chapter1View10: View {
                         .cornerRadius(25.0)
                         .navigationBarBackButtonHidden(true)
                         .padding(.horizontal)
-                        .onTapGesture {
-                            chapterUnlocker.isChapter2Disabled = false
-                        }
                         
                   
                         Spacer()
-                        
+                         
                     }
            
                 }
@@ -83,6 +80,9 @@ struct Chapter1View10: View {
     
     
 }
+        .onAppear {
+            chapterUnlocker.isChapter2Disabled = false
+        }
     }
 }
 
